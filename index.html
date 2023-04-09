@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Сервис комментариев</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <div class="container">
+            <div class="content">
+                <div class="topic-text">
+                    <h1>Сервис комментариев со спам фильтром</h1>
+                    <h2>Оставьте ваш комментарий</h2>
+                </div>
+                <div class="form-info" id="form">
+                        <div class="input-box">
+                            <p>Ввидите ваше ФИО:</p>
+                            <input class="fullname" type="text" id="name">
+                        </div><br>                 
+                        <p>Ввидите ссылку вашего аватара:</p>
+                        <div class="input-box">
+                            <input class="profile-picture" type="url" id="profil-pic" name="pictute">
+                        </div>
+                        <p>Оставьте комментарий:</p>
+                        <div class="input-box message-box">
+                            <textarea class="message" id="message" name="message"></textarea>
+                        </div>
+                        <button class="btn" id="btn">Отправить
+                        </div>
+                        <div class="chat-comments">
+                            <p>Чат</p>
+                            <div class="chat" id="comments"></div>
+                            <div class="user-photo"></div>
+                            <textarea class="chat-box" type="text" value="" id="chat-comments"></textarea>
+                            </div>
+                        </form>                            
+                        </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+    <script src="index.js"></script>
+</body>
+</html>
