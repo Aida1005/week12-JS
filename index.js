@@ -26,19 +26,19 @@ let fullNameNew = "";
     
     //Отображаем аватар в месте для комментариев 
     userphoto.innerHTML = `<img class="user-photo" src=${profilePic.value} alt="profile-picture" />`;
-
-    //Получаем введенный комментарий и заменяем слово "viagra" на "***"
+    
+        //Получаем введенный комментарий и заменяем слово "viagra" на "***"
     const comment = document.querySelector(".message").value;
     const filteredComment = comment.replace(/viagra/gi, "***");
 
     //Отображаем отфильтрованный комментарий в месте для комментариев 
     const textarea = document.querySelector('.chat-box');
     textarea.value = filteredComment;
-})
 
-
-
-
-
+    //Отображаем дату и время в месте для комментариев 
+    const d = new Date();
+    let text = d.toDateString() + ' ' + 'at' + ' ' + d.toTimeString();
+    document.querySelector('.time').innerHTML = text;
+});
 
 

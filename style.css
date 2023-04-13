@@ -32,6 +32,16 @@ p{
     box-shadow: 4px 4px 8px 0 rgba(89, 208, 154, 0.2);
 }
 
+.action{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.checkbox{
+    margin-left: 15px;
+}
+
 .topic-text h1{
     font-size: 30px;
     font-weight: 600;
