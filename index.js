@@ -1,34 +1,39 @@
-//Переменные всех элементов
-const fullname = document.querySelector('.fullname');
-const username = document.querySelector('.chat');
-
-const profilePic = document.querySelector('.profile-picture');
-const userphoto = document.querySelector('.user-photo');
-
-const button = document.querySelector('.btn');
+//Находим элементы формы по их классам
+const fullname = document.querySelector('.fullname');//Поле ввода ФИО
+const username = document.querySelector('.chat');//место для отображения имени
+const profilePic = document.querySelector('.profile-picture');//поле ввода ссылки на аватар
+const userphoto = document.querySelector('.user-photo');//место для отображения аватара
+const button = document.querySelector('.btn');//кнопка отправки комментария
 
 
+//Вешаем обработчик события на кнопку "Отправить"
 button.addEventListener('click', () =>{ 
-
-    //интерфейс преобразования имени с помощью массива
-    const arr = (fullname.value).split(" ");
-    const ArrUpp =[];
-    for (let i=0;i < arr.length; i++){
-        ArrUpp.push(arr[i] = arr[i][0].toUpperCase() + arr[i].substring(1).toLowerCase());
-    };
-    let fullnameNew = ArrUpp.join(' ');
-
-    //Выводим ФИО в чат
-    username.textContent =`${fullnameNew}`;
-
-    //Выводим аватар (profilePic) в чат
+//Разбиваем введённое ФИО на отдельные части по пробелам
+const nameParts = fullname.value.split(" ");
+let fullNameNew = "";
+//Проходимся циклом по всем частям ФИО
+    for (let i=0;i < nameParts.length; i++){
+        //Если длинна части больше нуля, то это не пробел, а часть ФИО
+        if (nameParts[i].length > 0){
+            //Формируем новую строку ФИО с заглавной буквой у каждой части 
+            fullNameNew +=
+            nameParts[i][0].toUpperCase() +
+            nameParts[i].substring(1).toLowerCase() + " ";
+        }
+    }
+    //Отображаем ФИО в месте для комментариев 
+    username.textContent = fullNameNew.trim();
+    
+    //Отображаем аватар в месте для комментариев 
     userphoto.innerHTML = `<img class="user-photo" src=${profilePic.value} alt="profile-picture" />`;
 
-    //Ставим фильтр
-    const string = "Hi, buy viagra now";// Hi, buy viagra now
-    let word = string.replace(/viagra/gi,"***");
+    //Получаем введенный комментарий и заменяем слово "viagra" на "***"
+    const comment = document.querySelector(".message").value;
+    const filteredComment = comment.replace(/viagra/gi, "***");
+
+    //Отображаем отфильтрованный комментарий в месте для комментариев 
     const textarea = document.querySelector('.chat-box');
-    textarea.value = word;
+    textarea.value = filteredComment;
 })
 
 
