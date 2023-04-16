@@ -19,15 +19,15 @@
                     <div class="action">
                         <p class="action-title">Показывать ваше имя?</p>
                         <div class="checkbox">
-                            <input class="checkbox" type="checkbox"> 
+                            <input class="my-checkbox" type="checkbox" id="clickYes"/>  
                             <label>Да </label>
-                            <input class="checkbox" type="checkbox">
+                            <input class="my-checkbox" type="checkbox" id="clickNo"/>
                             <label>Нет</label> 
                         </div>                    
                     </div>
                 </div>
                 <div class="form-info" id="form">
-                        <div class="input-box">
+                        <div class="input-box" id="inputbox">
                             <p>Ввидите ваше ФИО:</p>
                             <input class="fullname" type="text" id="name">
                         </div><br>                 
@@ -45,7 +45,7 @@
                             <p>Чат</p>
                             <div class="chat" id="comments"></div>
                             <div class="user-photo"></div>
-                            <textarea class="chat-box" type="text" value="" id="chat-comments"></textarea>
+                            <textarea class="chat-box" type="text" value="" id="chat-comments" disabled></textarea>
                             <p class="time" id="time-comment"></p>
                             </div>
                         </form>                            

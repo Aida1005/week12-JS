@@ -6,7 +6,7 @@ const userphoto = document.querySelector('.user-photo');//место для от
 const button = document.querySelector('.btn');//кнопка отправки комментария
 
 
-//Вешаем обработчик события на кнопку "Отправить"
+//Вешаем обработчик события на кнопку "Отправить" 
 button.addEventListener('click', () =>{ 
 //Разбиваем введённое ФИО на отдельные части по пробелам
 const nameParts = fullname.value.split(" ");
@@ -27,6 +27,10 @@ let fullNameNew = "";
     //Отображаем аватар в месте для комментариев 
     userphoto.innerHTML = `<img class="user-photo" src=${profilePic.value} alt="profile-picture" />`;
     
+//avatar
+userphoto.innerHTML = `<img class="user-photo" src=${profilePic.value} 
+style = "width: 60px" alt="profile-picture" />`;
+
     //Получаем введенный комментарий и заменяем слово "viagra" на "***"
     const comment = document.querySelector(".message").value;
     const filteredComment = comment.replace(/viagra/gi, "***");
@@ -40,7 +44,18 @@ let fullNameNew = "";
     let text = d.toDateString() + ' ' + 'at' + ' ' + d.toTimeString();
     document.querySelector('.time').innerHTML = text;
 
-    //
 });
 
 
+//Checkbox позволяющий скрыть поле для ввода ФИО
+let checkBox = document.getElementById("clickNo");
+    clickNo.addEventListener('change', function(){ 
+        let inputHidden = document.getElementById("inputbox");
+        if (clickNo.checked){
+            inputHidden.style.display = "none";
+        } else {
+            inputHidden.style.display = "block";
+        }
+    });
+
+    
