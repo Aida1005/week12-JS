@@ -23,6 +23,11 @@ let fullNameNew = "";
     }
     //Отображаем ФИО в месте для комментариев 
     username.textContent = fullNameNew.trim();
+
+    //Условие для неуказанного ФИО, как "username" в чате
+if (fullname.value === ''){
+    username.textContent = "username";
+}
     
     //Отображаем аватар в месте для комментариев 
     userphoto.innerHTML = `<img class="user-photo" src=${profilePic.value} alt="profile-picture" />`;
@@ -55,12 +60,6 @@ userphoto.innerHTML = `<img src= ${randomPic} alt="profile-picture">`;
 } else{
     userphoto.innerHTML = `<img class="user-photo" src=${profilePic.value} alt="profile-picture" />`;
 };
-
-//Условие для неуказанного ФИО, как "username" в чате
-if (fullname.value === ''){
-    username.textContent = "username";
-}
-
 });
 
 //Checkbox позволяющий скрыть поле ввода ФИО
@@ -73,4 +72,3 @@ let checkBox = document.getElementById("clickNo");
             inputHidden.style.display = "block";
         }
     });
-
